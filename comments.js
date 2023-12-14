@@ -8,6 +8,8 @@ app.use(bodyParser.json());
 app.use(cors());
 const commentsByPostId = {};
 
+// Get all comments for a post given its id
+
 app.get('/posts/:id/comments', (req, res) => {
   res.send(commentsByPostId[req.params.id] || [])
 });
